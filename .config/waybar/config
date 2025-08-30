@@ -1,0 +1,73 @@
+{
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 5, // Waybar height (to be removed for auto height)
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-right": ["custom/update", "pulseaudio", "custom/disk", "cpu", "memory", "battery", "clock", "tray"],
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        "icon-size": 24,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%H:%M - %d/%m/%Y}",
+        "timezone": "Europe/Paris",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "CPU: {usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "🐏{}% ",
+        "tooltip": false
+    },
+    "backlight": {
+        "format": "{percent}% ",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "🔋{capacity}% ",
+        "format-charging": "⚡{capacity}%",
+        "format-plugged": "⚡{capacity}%",
+        "format-alt": "⏳{time} ",
+        "tooltip": false
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interfac
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {format_source}",
+        "format-bluetooth": "{volume}% {format_source}",
+        "format-bluetooth-muted": "🔇 {format_source}",
+        "format-muted": "🔇 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": ""
+    },
+    "custom/update": {
+        "exec": "checkupdates | wc -l",
+        "interval": 60000,
+        "return-type": "text",
+        "format": "⏫ {text}",
+        "tooltip": false
+    },
+    "custom/disk": {
+        "exec": "df -h / | awk '/\\//{ printf(\"%4s/%s\\n\", $4, $2) }'",
+        "interval": 60000,
+        "return-type": "text",
+        "format": "💾 {text}",
+        "tooltip": false
+    }
+}
