@@ -11,9 +11,6 @@ export PATH=$PATH:$HOME/.dotnet/tools
 plugins=(git)
 
 # Aliases
-alias pandoc-render="/home/axlr/script/md2pdf/pandoc.sh"
-alias pandoc-lettre="/home/axlr/script/md2pdf/pandoc-lettre.sh"
-alias start-php="php -S 127.0.0.1:8888 -t ./"
 alias i3lock="swaylock"
 
 # Source
