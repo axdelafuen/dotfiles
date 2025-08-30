@@ -1,0 +1,134 @@
+* {
+    /*font-family: "Hack", monospace;*/
+    font-family: "Roboto Mono Medium", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    box-shadow: none;
+    transition: none;
+    border-radius: 0;
+}
+
+/* Bar container */
+#waybar {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Workspaces */
+#workspaces button {
+    border: none;
+    padding: 0 15px;
+    margin: 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Focused workspace */
+#workspaces button.focused {
+    background-color: #d6d6d6;
+    color: #000000;
+}
+
+/* Active workspace (e.g. visible on another output) */
+#workspaces button.active {
+    background-color: #5f676a;
+    color: #ffffff;
+}
+
+/* Inactive workspace */
+#workspaces button.inactive {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Urgent workspace */
+#workspaces button.urgent {
+    background-color: #900000;
+    color: #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#custom-update,
+#custom-disk,
+#window,
+#workspaces {
+  margin: 0 0 0 20px;
+}
+
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#clock {
+  background-color: #000000;
+  color: white;
+}
+
+#battery {
+  background-color: #000000;
+  color: white;
+}
+
+#battery.charging {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#cpu {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#memory {
+  background-color: #000000;
+  color: white;
+}
+
+#backlight {
+  background-color: #000000;
+  color: white;
+}
+
+#network {
+  background-color: #000000;
+  color: white;
+}
+
+#network.disconnected {
+  background-color: #f53c3c;
+}
+
+#pulseaudio {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#pulseaudio.muted {
+  background-color: #000000;
+  color: #ffffff;
+}
